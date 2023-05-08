@@ -1,5 +1,5 @@
 import classes from './BackgroundVideo.module.css';
-import video from '../../assets/homepage_video.mp4';
+import video from '/src/assets/homepage_video.mp4';
 
 function BackgroundVideo() {
   return (

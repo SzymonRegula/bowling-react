@@ -1,4 +1,5 @@
 import Banner from '../components/ui/Banner';
+import bannerImg from '/src/assets/bar.jpg';
 import { Fragment } from 'react';
 
 function BarPage() {
@@ -8,7 +9,7 @@ function BarPage() {
         <title>Bar</title>
         <meta name='description' content='See what we have to eat and drink' />
       </Head> */}
-      <Banner text='Bar' img='/src/assets/bar.jpg' />
+      <Banner text='Bar' img='/bar.jpg' />
     </Fragment>
   );
 }

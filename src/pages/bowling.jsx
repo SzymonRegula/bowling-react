@@ -3,6 +3,7 @@ import Card from '../components/ui/Card';
 import Container from '../components/ui/Container';
 import { Fragment } from 'react';
 import Pricing from '../components/pricing/Pricing';
+import bannerImg from '/src/assets/bowling.jpg';
 
 function BowlingPage() {
   return (
@@ -11,7 +12,7 @@ function BowlingPage() {
         <title>Bowling</title>
         <meta name='description' content='Bowling prices' />
       </Head> */}
-      <Banner text='Bowling' img='/src/assets/bowling.jpg' />
+      <Banner text='Bowling' img={'/bowling.jpg'} />
       <Container>
         <Card>
           <Pricing />
