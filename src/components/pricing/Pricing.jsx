@@ -14,7 +14,7 @@ function Pricing() {
             <p>Disposable socks for FREE!</p>
           </div>
           <img
-            src='assets/bowling-shoes.jpg'
+            src='assets/bowling-shoes.webp'
             alt=''
             className={classes['shoes-img']}
           ></img>

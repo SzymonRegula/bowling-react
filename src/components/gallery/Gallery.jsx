@@ -3,8 +3,21 @@ import classes from './Gallery.module.css';
 import Modal from './modal/Modal';
 import Picture from './Picture';
 
-const imgNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-const images = imgNames.map((image) => `assets/gallery/${image}.jpg`);
+const imgNames = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+];
+const images = imgNames.map((image) => `assets/gallery/${image}.webp`);
 
 function Gallery() {
   const [openedImage, setOpenedImage] = useState(null);

@@ -11,7 +11,7 @@ function BowlingPage() {
         <title>Bowling</title>
         <meta name='description' content='Bowling prices' />
       </Head> */}
-      <Banner text='Bowling' img='assets/bowling.jpg' />
+      <Banner text='Bowling' img='assets/bowling.webp' />
       <Container>
         <Card>
           <Pricing />
