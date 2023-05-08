@@ -1,0 +1,24 @@
+.banner {
+  width: 100vw;
+  height: 40rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+  filter: brightness(60%);
+}
+
+.h1 {
+  flex-grow: 1;
+  max-width: 80rem;
+  margin: 0 auto;
+  font-size: 8rem;
+  font-weight: 700;
+}

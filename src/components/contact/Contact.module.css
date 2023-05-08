@@ -1,0 +1,12 @@
+.h1 {
+  margin: 4rem 0;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}

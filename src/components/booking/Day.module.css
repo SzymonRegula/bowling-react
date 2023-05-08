@@ -1,0 +1,20 @@
+.day {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-black-color);
+  width: 10rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.day:hover {
+  color: var(--main-orange-color);
+  cursor: pointer;
+}
+
+.day.active {
+  color: var(--main-orange-color);
+}

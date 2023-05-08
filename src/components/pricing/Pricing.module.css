@@ -1,0 +1,57 @@
+.h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.pricing {
+  padding: 3rem;
+}
+
+.table {
+  text-align: center;
+  background-color: var(--main-bg-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 2rem;
+}
+
+.price {
+  background-color: var(--main-black-color);
+  width: 6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.currency {
+  font-size: 1rem;
+}
+
+.shoes {
+  grid-column: -2/-1;
+  grid-row: 1/-1;
+  display: flex;
+  flex-direction: column;
+}
+
+.shoes-img {
+  margin-top: 1rem;
+  width: 20rem;
+  border-radius: 1rem;
+  filter: brightness(70%);
+}
+
+.shoes-desc {
+  font-size: 1rem;
+}

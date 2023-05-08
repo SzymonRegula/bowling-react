@@ -1,0 +1,12 @@
+.calendar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.h1 {
+  margin: 4rem 0;
+  font-size: 5rem;
+  text-align: center;
+}
