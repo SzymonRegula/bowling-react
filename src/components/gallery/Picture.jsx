@@ -1,9 +1,9 @@
 import classes from './Picture.module.css';
 
-function Picture(props) {
+function Picture({ onClick, img }) {
   return (
-    <div className={classes.box} onClick={props.onClick}>
-      <img className={classes.img} src={props.img} alt='' />
+    <div className={classes.box} onClick={onClick}>
+      <img className={classes.img} src={img} alt='' />
     </div>
   );
 }

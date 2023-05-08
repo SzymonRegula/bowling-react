@@ -3,14 +3,14 @@ import classes from './Gallery.module.css';
 import Modal from './modal/Modal';
 import Picture from './Picture';
 
-const images = import.meta.glob('/src/assets/gallery/*.jpg');
-Object.keys(images).map((image, index) => console.log(images[image].default));
+const imgNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+const images = imgNames.map((image) => `assets/gallery/${image}.jpg`);
 
 function Gallery() {
   const [openedImage, setOpenedImage] = useState(null);
 
-  const openImageHandler = (imgIndex) => {
-    setOpenedImage(imgIndex);
+  const openImageHandler = (image) => {
+    setOpenedImage(image);
   };
 
   const closeImageHandler = () => {
@@ -21,20 +21,16 @@ function Gallery() {
     <Fragment>
       <h1 className={classes.h1}>Gallery</h1>
       <div className={classes.grid}>
-        {Object.keys(images).map((image, index) => (
+        {images.map((image, index) => (
           <Picture
-            img={images[image].default}
+            img={image}
             key={index}
-            onClick={openImageHandler.bind(this, index)}
+            onClick={openImageHandler.bind(this, image)}
           />
         ))}
       </div>
       {openedImage && (
-        <Modal
-          img={openedImage}
-          imgNames={imgNames}
-          onClose={closeImageHandler}
-        />
+        <Modal img={openedImage} imgs={images} onClose={closeImageHandler} />
       )}
     </Fragment>
   );

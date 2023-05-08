@@ -13,11 +13,7 @@ function ModalPicture(props) {
         </svg>
       </button>
 
-      <img
-        className={classes.img}
-        src={`/src/assets/gallery/${props.img}.jpg`}
-        alt=''
-      />
+      <img className={classes.img} src={props.img} alt='' />
 
       <button className={classes.right} onClick={props.onClickNext}>
         <svg

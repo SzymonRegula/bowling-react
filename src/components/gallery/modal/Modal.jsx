@@ -2,26 +2,27 @@ import { Fragment, useCallback, useEffect, useState } from 'react';
 import Backdrop from './Backdrop';
 import ModalPicture from './ModalPicture';
 
-function Modal({ onClose, imgNames, img }) {
+function Modal({ onClose, imgs, img }) {
+  console.log('refresh');
   const [currentImage, setCurrentImage] = useState(img);
 
   const nextImage = useCallback(() => {
-    const imgId = imgNames.indexOf(currentImage);
-    if (imgId === imgNames.length - 1) {
-      setCurrentImage(imgNames[0]);
+    const imgId = imgs.indexOf(currentImage);
+    if (imgId === imgs.length - 1) {
+      setCurrentImage(imgs[0]);
     } else {
-      setCurrentImage(imgNames[imgId + 1]);
+      setCurrentImage(imgs[imgId + 1]);
     }
-  }, [currentImage, imgNames]);
+  }, [currentImage, imgs]);
 
   const previousImage = useCallback(() => {
-    const imgId = imgNames.indexOf(currentImage);
+    const imgId = imgs.indexOf(currentImage);
     if (imgId === 0) {
-      setCurrentImage(imgNames[imgNames.length - 1]);
+      setCurrentImage(imgs[imgs.length - 1]);
     } else {
-      setCurrentImage(imgNames[imgId - 1]);
+      setCurrentImage(imgs[imgId - 1]);
     }
-  }, [currentImage, imgNames]);
+  }, [currentImage, imgs]);
 
   const keyFunction = useCallback(
     (event) => {

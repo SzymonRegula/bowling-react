@@ -1,5 +1,4 @@
 import classes from './Pricing.module.css';
-import shoesImg from '/src/assets/bowling-shoes.jpg';
 
 function Pricing() {
   return (
@@ -14,7 +13,11 @@ function Pricing() {
             <p>Rental of bowling shoes PLN 5/per.</p>
             <p>Disposable socks for FREE!</p>
           </div>
-          <img src={shoesImg} alt='' className={classes['shoes-img']}></img>
+          <img
+            src='assets/bowling-shoes.jpg'
+            alt=''
+            className={classes['shoes-img']}
+          ></img>
         </div>
         <p>Monday-Thursday</p>
         <p className={classes.price}>
