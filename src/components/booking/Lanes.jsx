@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import classes from './Lanes.module.css';
 import Square from './Square';
 
-function Lanes({ onSquareClick, bookings }) {
+function Lanes({ onSquareClick, dayBookings }) {
   const lanes = [1, 2, 3, 4, 5, 6, 7, 8];
   const hours = [
     '10:00',
@@ -37,7 +37,9 @@ function Lanes({ onSquareClick, bookings }) {
                 <Square
                   key={lane}
                   onClick={onSquareClick.bind(null, hour, lane)}
-                  bookings={bookings}
+                  booked={dayBookings.some(
+                    (booking) => booking.hour === hour && booking.lane === lane
+                  )}
                 ></Square>
               );
             })}

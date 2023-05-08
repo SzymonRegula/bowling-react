@@ -50,7 +50,10 @@ function Calendar() {
         ))}
       </ul>
       <h2 className={classes.h2}>Choose the time and lane</h2>
-      <Lanes onSquareClick={squareClickHandler} bookings={bookings}></Lanes>
+      <Lanes
+        onSquareClick={squareClickHandler}
+        dayBookings={bookings.filter((booking) => booking.date === selectedDay)}
+      ></Lanes>
     </>
   );
 }
