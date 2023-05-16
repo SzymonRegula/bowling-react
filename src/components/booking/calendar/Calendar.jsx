@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import classes from './Calendar.module.css';
 import Day from './Day';
 import Lanes from './Lanes';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedDay } from '../../../redux/booking';
 
 function Calendar() {
   const [today, setToday] = useState(new Date());
   const [dates, setDates] = useState([]);
-  const [selectedDay, setSelectedDay] = useState(today.toLocaleDateString());
-  const [bookings, setBookings] = useState([]);
+  const selectedDay = useSelector((state) => state.booking.selectedDay);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const datesArr = [];
@@ -23,17 +25,8 @@ function Calendar() {
   }, [today]);
 
   const pickDayHandler = (date) => {
-    setSelectedDay(date);
+    dispatch(setSelectedDay(date));
   };
-
-  const squareClickHandler = (hour, lane) => {
-    const booking = { date: selectedDay, hour, lane };
-    if (!bookings.includes(booking)) {
-      setBookings((currentBookings) => [booking, ...currentBookings]);
-    }
-  };
-
-  console.log(bookings);
 
   return (
     <>
@@ -50,10 +43,7 @@ function Calendar() {
         ))}
       </ul>
       <h2 className={classes.h2}>Choose the time and lane</h2>
-      <Lanes
-        onSquareClick={squareClickHandler}
-        dayBookings={bookings.filter((booking) => booking.date === selectedDay)}
-      ></Lanes>
+      <Lanes />
     </>
   );
 }

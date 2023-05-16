@@ -1,8 +1,11 @@
 import { Fragment } from 'react';
 import classes from './Lanes.module.css';
 import Square from './Square';
+import { useSelector } from 'react-redux';
 
-function Lanes({ onSquareClick, dayBookings }) {
+function Lanes() {
+  const date = useSelector((state) => state.booking.selectedDay);
+
   const lanes = [1, 2, 3, 4, 5, 6, 7, 8];
   const hours = [
     '10:00',
@@ -36,10 +39,10 @@ function Lanes({ onSquareClick, dayBookings }) {
               return (
                 <Square
                   key={lane}
-                  onClick={onSquareClick.bind(null, hour, lane)}
-                  booked={dayBookings.some(
-                    (booking) => booking.hour === hour && booking.lane === lane
-                  )}
+                  id={'' + date + hour + lane}
+                  date={date}
+                  hour={hour}
+                  lane={lane}
                 ></Square>
               );
             })}

@@ -1,4 +1,5 @@
-import Calendar from '../components/booking/Calendar';
+import ContactForm from '../components/booking/ContactForm';
+import Calendar from '../components/booking/calendar/Calendar';
 import Container from '../components/ui/Container';
 import { Fragment } from 'react';
 
@@ -11,6 +12,7 @@ function BookingPage() {
       </Head> */}
       <Container>
         <Calendar />
+        <ContactForm />
       </Container>
     </Fragment>
   );

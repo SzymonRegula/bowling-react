@@ -10,6 +10,11 @@
   background-color: rgb(137, 204, 36);
 }
 
+.square.chosen {
+  background-color: var(--main-orange-color);
+}
+
 .square.booked {
-  background-color: red;
+  background-color: var(--main-bg-color);
+  pointer-events: none;
 }

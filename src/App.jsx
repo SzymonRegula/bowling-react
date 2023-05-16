@@ -7,6 +7,9 @@ import BarPage from './pages/bar';
 import GalleryPage from './pages/gallery';
 import ContactPage from './pages/contact';
 import BookingPage from './pages/booking';
+import { useDispatch } from 'react-redux';
+import { setBooked } from './redux/booking';
+import { useEffect } from 'react';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +46,22 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `https://bowling-booking-4dff2-default-rtdb.europe-west1.firebasedatabase.app/.json`
+      );
+      const data = await response.json();
+
+      if (data) {
+        dispatch(setBooked(data));
+      }
+    };
+    fetchData();
+  }, [dispatch]);
+
   return <RouterProvider router={router} />;
 }
 

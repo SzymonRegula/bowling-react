@@ -7,7 +7,7 @@ function HeroSection() {
     <div className={classes.hero}>
       <BackgroundVideo />
       <div className={classes.box}>
-        <h1>The best bowling in town!</h1>
+        <h1 className={classes.h1}>The best bowling in town!</h1>
         <LinkButton link='/booking'>Book</LinkButton>
       </div>
     </div>
