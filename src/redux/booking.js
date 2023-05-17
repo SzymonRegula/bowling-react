@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  selectedDay: new Date().toLocaleDateString(),
+  selectedDay: new Date().toLocaleDateString('pl-PL'),
   booked: [],
   chosen: [],
   contactData: { firstName: '', lastName: '', email: '' },
@@ -15,8 +15,6 @@ export const bookingSlice = createSlice({
       const booked = Object.values(action.payload).flatMap(
         (bookingsWithContact) => bookingsWithContact.bookings
       );
-
-      console.log(booked);
       state.booked = booked;
     },
     addBooked: (state, action) => {

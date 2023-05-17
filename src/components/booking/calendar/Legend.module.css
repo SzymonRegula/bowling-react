@@ -1,0 +1,29 @@
+.box {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.square {
+  width: 2rem;
+  height: 2rem;
+}
+
+.unavailable {
+  background-color: var(--unavailable-gray-color);
+}
+
+.available {
+  background-color: var(--available-green-color);
+}
+
+.selected {
+  background-color: var(--selected-blue-color);
+}

@@ -49,17 +49,27 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const controller = new AbortController();
     const fetchData = async () => {
-      const response = await fetch(
-        `https://bowling-booking-4dff2-default-rtdb.europe-west1.firebasedatabase.app/.json`
-      );
-      const data = await response.json();
+      try {
+        const response = await fetch(
+          `https://bowling-booking-4dff2-default-rtdb.europe-west1.firebasedatabase.app/.json`,
+          { signal: controller.signal }
+        );
+        const data = await response.json();
 
-      if (data) {
-        dispatch(setBooked(data));
+        if (data) {
+          dispatch(setBooked(data));
+        }
+      } catch (error) {
+        console.error(error);
       }
     };
     fetchData();
+
+    return () => {
+      controller.abort();
+    };
   }, [dispatch]);
 
   return <RouterProvider router={router} />;

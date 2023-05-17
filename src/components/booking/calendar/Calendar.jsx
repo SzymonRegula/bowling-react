@@ -4,9 +4,9 @@ import Day from './Day';
 import Lanes from './Lanes';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedDay } from '../../../redux/booking';
+import Legend from './Legend';
 
 function Calendar() {
-  const [today, setToday] = useState(new Date());
   const [dates, setDates] = useState([]);
   const selectedDay = useSelector((state) => state.booking.selectedDay);
   const dispatch = useDispatch();
@@ -14,15 +14,14 @@ function Calendar() {
   useEffect(() => {
     const datesArr = [];
     for (let i = 0; i < 7; i++) {
-      const date = new Date(today.getTime() + i * 24 * 60 * 60 * 1000);
+      const date = new Date(new Date().getTime() + i * 24 * 60 * 60 * 1000);
       const weekday = new Intl.DateTimeFormat('en-US', {
         weekday: 'long',
       }).format(date);
-      datesArr.push({ date: date.toLocaleDateString(), weekday });
+      datesArr.push({ date: date.toLocaleDateString('pl-PL'), weekday });
     }
-
     setDates(datesArr);
-  }, [today]);
+  }, []);
 
   const pickDayHandler = (date) => {
     dispatch(setSelectedDay(date));
@@ -42,8 +41,13 @@ function Calendar() {
           />
         ))}
       </ul>
-      <h2 className={classes.h2}>Choose the time and lane</h2>
-      <Lanes />
+      <div className={classes.box}>
+        <div>
+          <h2 className={classes.h2}>Choose the time and lane</h2>
+          <Lanes />
+        </div>
+        <Legend />
+      </div>
     </>
   );
 }

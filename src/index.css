@@ -8,6 +8,10 @@
   --main-gray-color: #ced4da;
   --main-orange-color: #e8590c;
   --darker-orange-color: #d1500b;
+
+  --available-green-color: #89cc24;
+  --unavailable-gray-color: #ced4da;
+  --selected-blue-color: #339af0;
 }
 
 * {

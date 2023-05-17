@@ -10,3 +10,9 @@
   font-size: 5rem;
   text-align: center;
 }
+
+.box {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}

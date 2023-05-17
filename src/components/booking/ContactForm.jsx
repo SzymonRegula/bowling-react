@@ -30,7 +30,6 @@ const ContactForm = () => {
       bookings: [...bookingState.chosen],
       contactDetails: bookingState.contactData,
     };
-    console.log(newBooking);
 
     try {
       const response = await fetch(
@@ -42,10 +41,11 @@ const ContactForm = () => {
       );
 
       if (!response.ok) {
-        throw new Error('Cannot make reservation!');
+        throw new Error('Booking failed!');
       }
 
       dispatch(addBooked(newBooking.bookings));
+      dispatch(setContactData({ firstName: '', lastName: '', email: '' }));
     } catch (error) {
       console.log(error.message);
     }

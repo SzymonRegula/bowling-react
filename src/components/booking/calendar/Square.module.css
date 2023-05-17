@@ -1,5 +1,5 @@
 .square {
-  background-color: greenyellow;
+  background-color: var(--available-green-color);
   width: 100%;
   height: 100%;
   transition: all 0.3s;
@@ -7,14 +7,14 @@
 
 .square:hover {
   cursor: pointer;
-  background-color: rgb(137, 204, 36);
+  background-color: rgb(174, 232, 58);
 }
 
 .square.chosen {
-  background-color: var(--main-orange-color);
+  background-color: var(--selected-blue-color);
 }
 
 .square.booked {
-  background-color: var(--main-bg-color);
+  background-color: var(--unavailable-gray-color);
   pointer-events: none;
 }
