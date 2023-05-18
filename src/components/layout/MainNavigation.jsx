@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classes from './MainNavigation.module.css';
 
 function MainNavigation() {
@@ -10,9 +10,9 @@ function MainNavigation() {
       <nav className={classes.nav}>
         <ul>
           <li>
-            <NavLink className={classes.link} to='/bowling'>
+            <Link className={classes.link} to='/bowling'>
               BOWLING
-            </NavLink>
+            </Link>
           </li>
           <li>
             <Link className={classes.link} to='/bar'>

@@ -54,7 +54,9 @@ function App() {
       try {
         const response = await fetch(
           `https://bowling-booking-4dff2-default-rtdb.europe-west1.firebasedatabase.app/.json`,
-          { signal: controller.signal }
+          {
+            signal: controller.signal,
+          }
         );
         const data = await response.json();
 
